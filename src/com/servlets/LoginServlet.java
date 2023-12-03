@@ -1,6 +1,8 @@
 package com.servlets;
 
 import java.io.IOException;
+import java.util.UUID;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -34,7 +36,7 @@ public class LoginServlet extends HttpServlet {
             UserDAO dao = new UserDAO(DBConnect.getConnection());
 
             try {
-                User user = dao.getLogin(email, hashedPassword);
+                User user = dao.getLogin(email, hashedPassword, rememberMe);
 
                 if (user != null) {
                     HttpSession session = request.getSession();
@@ -42,6 +44,14 @@ public class LoginServlet extends HttpServlet {
                     
                     // Check if "Remember Me" is checked
                     if (rememberMe != null && rememberMe.equals("on")) {
+                        // Generate a remember token
+                        String rememberToken = UUID.randomUUID().toString();
+                        
+                        // Store the token in the user object
+                        user.setRememberToken(rememberToken);
+                        
+                        // Update the database with the remember token
+                        dao.updateRememberToken(user.getId(), rememberToken);
                         // Create a cookie for the user's email
                         Cookie emailCookie = new Cookie("userEmail", email);
                         emailCookie.setMaxAge(30 * 24 * 60 * 60); // Cookie expires in 30 days

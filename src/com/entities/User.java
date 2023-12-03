@@ -5,22 +5,32 @@ public class User {
 	private String name;
 	private String email;
 	private String passeword;
+	private String rememberToken;
+	
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public User(int id, String name, String email, String passeword) {
+	public User(int id, String name, String email, String passeword, String rememberToken) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.passeword = passeword;
+		this.rememberToken = rememberToken;
 	}
-	public User(String name, String email, String passeword) {
+	public User(String name, String email, String passeword, String rememberToken) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.passeword = passeword;
+		this.rememberToken = rememberToken;
+	}
+	public String getRememberToken() {
+		return rememberToken;
+	}
+	public void setRememberToken(String rememberToken) {
+		this.rememberToken = rememberToken;
 	}
 	public int getId() {
 		return id;
