@@ -1,4 +1,4 @@
-package com.servlets;
+ package com.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -46,10 +46,16 @@ public class registerServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		
+		String hashedPassword = UserDAO.passwordHash(password);
+
+//		String passwordHash = passwordHash(password.getText());
+		
 		User us = new User();
 		us.setName(name);
 		us.setEmail(email);
-		us.setPasseword(password);
+		//us.setPasseword(password);
+		us.setPasseword(hashedPassword);
+		
 		
 		UserDAO dao = new UserDAO(DBConnect.getConnection());
 		boolean f = dao.userRegister(us);
