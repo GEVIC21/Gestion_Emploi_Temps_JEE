@@ -15,6 +15,7 @@ import com.DAO.UserDAO;
 import com.DB.DBConnect;
 import com.entities.User;
 
+// @WebServlet("/LoginServlet")
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 

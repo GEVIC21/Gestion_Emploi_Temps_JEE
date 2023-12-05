@@ -18,10 +18,9 @@
 <body>
 
 	<%
-		User user1=(User)session.getAttribute("user-ob");
-		if(user1==null)
-		{
-			session.setAttribute("login-msg","s'il vous plait veuillez vous connectez");
+		User user1 = (User) session.getAttribute("user-ob");
+		if (user1 == null) {
+			session.setAttribute("login-msg", "s'il vous plait veuillez vous connectez");
 			response.sendRedirect("login.jsp");
 		}
 	%>
@@ -39,8 +38,8 @@
 				<li><a href="#"><span class="fa fa-sticky-note"></span>
 						Blog</a></li>
 				<li><a href="#"><span class="fa fa-cogs"></span> Services</a></li>
-				<li><a href="${pageContext.request.contextPath}/LogoutServlet"><span class="fa fa-paper-plane"></span>
-						Déconnecter</a></li>
+				<li><a href="${pageContext.request.contextPath}/LogoutServlet"><span
+						class="fa fa-paper-plane"></span> Déconnecter</a></li>
 			</ul>
 
 			<div class="footer">
@@ -84,12 +83,6 @@
 							%>
 
 
-							<li class="nav-item"><a class="nav-link"
-								href="${pageContext.request.contextPath}/login.jsp">Se
-									connecter</a></li>
-							<li class="nav-item"><a class="nav-link"
-								href="${pageContext.request.contextPath}/register.jsp">S'inscrire</a>
-							</li>
 
 							<li class="nav-item"><a class="nav-link" href="#"> <%=user.getName()%>
 							</a></li>
@@ -107,21 +100,9 @@
 			<h1 class="mb-4">
 				Bienvenue <strong><%=user.getName()%></strong> sur notre application
 				de gestion des emplois du temps
+				<h1>Dashboard</h1>
 			</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-				do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-				enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-				ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-				reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-				pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-				culpa qui officia deserunt mollit anim id est laborum.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-				do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-				enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-				ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-				reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-				pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-				culpa qui officia deserunt mollit anim id est laborum.</p>
+				
 		</div>
 	</div>
 

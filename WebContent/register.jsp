@@ -32,9 +32,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/login.jsp">Se connecter</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/register.jsp">S'inscrire</a>
-                </li>
+               
               </ul>
             </div>
           </div>
