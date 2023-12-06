@@ -16,6 +16,9 @@
 	href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
+	<header>
+	
+	</header>
 
 	<%
 		User user1 = (User) session.getAttribute("user-ob");
@@ -42,17 +45,7 @@
 						class="fa fa-paper-plane"></span> Déconnecter</a></li>
 			</ul>
 
-			<div class="footer">
-				<p>
-					Copyright &copy;
-					<script>
-						document.write(new Date().getFullYear());
-					</script>
-					All rights reserved | This template is made with <i
-						class="icon-heart" aria-hidden="true"></i> by <a
-						href="https://colorlib.com" target="_blank">Colorlib.com</a>
-				</p>
-			</div>
+
 		</nav>
 
 		<!-- Page Content  -->
@@ -97,18 +90,34 @@
 				</div>
 			</nav>
 
-			<h1 class="mb-4">
+			<span><%@ include file="tableDashboard.jsp"%></span>
+			<h1 class="mb-1">
 				Bienvenue <strong><%=user.getName()%></strong> sur notre application
 				de gestion des emplois du temps
 				<h1>Dashboard</h1>
 			</h1>
-				
+
 		</div>
 	</div>
+
+	<footer>
+		<div class="footer">
+			<p>
+				Copyright &copy;
+				<script>
+					document.write(new Date().getFullYear());
+				</script>
+				All rights reserved | This template is made with <i
+					class="icon-heart" aria-hidden="true"></i> by <a
+					href="https://colorlib.com" target="_blank">Colorlib.com</a>
+			</p>
+		</div>
+	</footer>
 
 	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 	<script src="${pageContext.request.contextPath}/js/popper.js"></script>
 	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 	<script src="${pageContext.request.contextPath}/js/main.js"></script>
+	<script src="${pageContext.request.contextPath}/js/TableDashboard.js"></script>
 </body>
 </html>
