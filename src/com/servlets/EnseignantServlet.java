@@ -127,7 +127,7 @@ public class EnseignantServlet extends HttpServlet {
 			Enseignant existingEnseignant;
 			try{
 				existingEnseignant = enseignantDao.selectEnseignant(id);
-				RequestDispatcher dispatcher = request.getRequestDispatcher("enseignant-form.jsp");
+				RequestDispatcher dispatcher = request.getRequestDispatcher("enseignants/enseignant-form.jsp");
 				request.setAttribute("enseignant", existingEnseignant);
 				dispatcher.forward(request, response);
 			} catch(Exception e){
@@ -155,7 +155,7 @@ public class EnseignantServlet extends HttpServlet {
 		try{
 			List<Enseignant> ListEnseignant = enseignantDao.selectAllEnseignants();
 			request.setAttribute("ListEnseignant", ListEnseignant);
-			RequestDispatcher dispatcher = request.getRequestDispatcher("enseignant-list.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("enseignants/enseignant-list.jsp");
 		} catch(Exception e){
 			e.printStackTrace();
 		}

@@ -44,10 +44,9 @@
 	%>
 	<div class="wrapper">
 
-		<span><%@ include file="main/header/header.jsp"%></span>
-		<span><%@ include file="main/sidebar/sidebar.jsp"%></span>
-		<span><%@ include file="main/content/content.jsp"%></span>
-		<span><%@ include file="main/footer/footer.jsp"%></span>
+		<span><%@ include file="../main/header/header.jsp"%></span>
+		<span><%@ include file="../main/sidebar/sidebar.jsp"%></span>
+		<span><%@ include file="../main/footer/footer.jsp"%></span>
 		<aside class="control-sidebar control-sidebar-dark">
 			<!-- Control sidebar content goes here -->
 		</aside>
