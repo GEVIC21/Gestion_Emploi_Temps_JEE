@@ -15,7 +15,7 @@
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/css/style.css">
+	href="${pageContext.request.contextPath}/dist/css/style.css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
