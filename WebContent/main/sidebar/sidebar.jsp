@@ -32,7 +32,7 @@
 				</a></li>
 
 				<li class="nav-item"><a
-					href="${pageContext.request.contextPath}/enseignants/enseignant-list.jsp"
+					href="${pageContext.request.contextPath}/enseignant_home.jsp"
 					class="nav-link"> <i class="fas fa-chalkboard-teacher"></i>
 						<p>Enseignants</p>
 				</a></li>

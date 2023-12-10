@@ -18,7 +18,7 @@ import com.entities.Enseignant;
 /**
  * Servlet implementation class EnseignantServlet
  */
-@WebServlet("/EnseignantServlet")
+@WebServlet("/")
 public class EnseignantServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private EnseignantDAO enseignantDao;
@@ -88,7 +88,7 @@ public class EnseignantServlet extends HttpServlet {
 	}
 
 	private void showNewForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		RequestDispatcher dispatcher = request.getRequestDispatcher("enseignant-form.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("enseignants/enseignant-form.jsp");
 		dispatcher.forward(request, response);
 	} 
 	//INSERT ENSEIGNANTS
@@ -104,7 +104,7 @@ public class EnseignantServlet extends HttpServlet {
 		Enseignant newEnseignant = new Enseignant(nom,prenom,tel,numero,matricule,email);
 		
 		enseignantDao.insertEnseignant(newEnseignant);
-		response.sendRedirect("list");
+		response.sendRedirect("enseignant_home.jsp");
 		
 		}
 	

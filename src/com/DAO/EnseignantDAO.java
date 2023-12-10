@@ -47,11 +47,11 @@ public class EnseignantDAO {
 		 try(Connection connection = getConnection();
 			PreparedStatement preparedStatement = connection.prepareStatement(INSERT_ENSEIGNANT_SQL)){
 			 preparedStatement.setString(1, enseignant.getNom());
-			 preparedStatement.setString(1, enseignant.getPrenom());
-			 preparedStatement.setString(1, enseignant.getTel());
-			 preparedStatement.setString(1, enseignant.getNumero());
-			 preparedStatement.setString(1, enseignant.getMatricule());
-			 preparedStatement.setString(1, enseignant.getEmail());
+			 preparedStatement.setString(2, enseignant.getPrenom());
+			 preparedStatement.setString(3, enseignant.getTel());
+			 preparedStatement.setString(4, enseignant.getNumero());
+			 preparedStatement.setString(5, enseignant.getMatricule());
+			 preparedStatement.setString(6, enseignant.getEmail());
 			 System.out.println(preparedStatement);
 			 preparedStatement.executeUpdate();
 		 }catch(SQLException e){
